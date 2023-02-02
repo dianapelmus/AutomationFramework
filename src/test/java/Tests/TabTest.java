@@ -1,0 +1,34 @@
+package Tests;
+
+import Base.BaseTest;
+import Base.Hooks;
+import HelpMethods.ElementMethods;
+import HelpMethods.PageMethods;
+import HelpMethods.TabMethods;
+import Pages.IndexPage;
+import Pages.RegisterPage;
+import Pages.WindowsPage;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class TabTest extends Hooks {
+
+    @Test
+     public void tabTestMethod (){
+     IndexPage indexPage = new IndexPage(driver);
+     indexPage.clickSkipSignIn();
+
+     RegisterPage registerPage = new RegisterPage(driver);
+     registerPage.goToWindowsPage();
+
+     WindowsPage windowsPage = new WindowsPage(driver);
+     windowsPage.dealTab();
+     windowsPage.dealWindow();
+     windowsPage.dealMultipleTabs();
+    }
+}
